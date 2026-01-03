@@ -71,31 +71,36 @@ footer {
   background: #fafafa;
 }
 
-/* SIDEBAR */
-.sidebar {
+/* TOP NAV BAR */
+.top-nav {
   position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background: #f7f7f7;
-  padding: 1rem;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
 }
-.sidebar ul {
+.top-nav ul {
+  display: flex;
+  justify-content: center;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0.5rem 0;
 }
-.sidebar li {
-  margin: 1rem 0;
+.top-nav li {
+  margin: 0 1.2rem;
 }
-.sidebar a {
+.top-nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
   transition: color 0.2s;
 }
-.sidebar a:hover {
+.top-nav a:hover {
   color: #007bff;
+}
+
+/* ADD TOP PADDING TO BODY CONTENT */
+body {
+  padding-top: 60px; /* make room for fixed nav */
 }
