@@ -76,7 +76,7 @@ footer {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
@@ -99,14 +99,6 @@ footer {
 .top-nav a:hover {
   color: #007bff;
 }
-
-/* ADD TOP PADDING TO BODY CONTENT */
 body {
-  padding-top: 60px; /* make room for fixed nav */
+  padding-top: 60px;
 }
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
