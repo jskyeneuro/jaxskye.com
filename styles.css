@@ -104,3 +104,9 @@ footer {
 body {
   padding-top: 60px; /* make room for fixed nav */
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
