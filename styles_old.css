@@ -1,0 +1,117 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HERO / HEADER */
+.hero {
+  background: #f7f7f7;
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero .container {
+  max-width: 700px;
+  margin: auto;
+}
+.hero h1 {
+  font-size: 2.8rem;
+}
+.hero #typed {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.section h2 {
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+/* PROJECT CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  text-align: left;
+}
+.card h3 {
+  margin-bottom: 8px;
+}
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  background: #fafafa;
+}
+
+/* TOP NAV BAR */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.top-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.top-nav li {
+  margin: 0 1.2rem;
+}
+.top-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.top-nav a:hover {
+  color: #007bff;
+}
+body {
+  padding-top: 60px;
+}
+
+/* HEADSHOT */
+.profile-pic {
+  max-width: 110px;
+  max-height: 110px;
+  margin: 0 auto 15px auto;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
