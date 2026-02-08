@@ -1,17 +1,34 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 :root {
-  --blue-100: #e8eaff;   /* light / intro */
-  --blue-300: #5f6bff;   /* mid (buttons, hover) */
-  --blue-500: #242cff;   /* MAIN blue (your choice) */
-  --blue-700: #1a1fcc;   /* dark (links, headers) */
+    /* BLUE */
+    --blue-100: #e8eaff;
+    --blue-300: #5f6bff;
+    --blue-500: #242cff;
+    --blue-700: #1a1fcc;
 
-  --green-500: #2bff22;   /* MAIN green () */
-  --orange-500: #f5751d;   /* MAIN orange () */
-  --grey-500: #2b2b2b;   /* grey () */
+    /* GREEN */
+    --green-100: #c9ffc6;
+    --green-300: #6dff66;
+    --green-500: #2bff22;
+    --green-700: #1fb818;
 
-  --white: #fafafa;   /* grey () */
-  
+    /* ORANGE */
+    --orange-100: #ffd9c2;
+    --orange-300: #ff9b57;
+    --orange-500: #f5751d;
+    --orange-700: #b85414;
+
+    /* GREY */
+    --grey-050: #f2f2f2;
+    --grey-100: #d6d6d6;
+    --grey-300: #9e9e9e;
+    --grey-500: #2b2b2b;
+    --grey-700: #1a1a1a;
+
+    /* WHITE */
+    --white: #fafafa;
+    --black: #000000;
 }
 
 /* main body */
@@ -78,7 +95,7 @@ small {
 
 /* main nav */
 nav {
-  background: white;
+  background: var(--grey-300);
   box-shadow: none;
   height: 0;
 }
@@ -166,7 +183,7 @@ ul.side-nav.fixed li.logo a {
 
 ul.table-of-contents li:not(.logo) a.active,
 ul.table-of-contents li:not(.logo) a:hover {
-  background-color: var(--white);
+  background-color: var(--grey-050);
   border-left: 3px solid;
 }
 
@@ -217,6 +234,7 @@ h3 {
 #intro.section {
   background: #e8eaff repeat;
   position: relative;
+  min-height: 60vh;
 }
 #intro.section .container {
   color: white;
@@ -238,8 +256,15 @@ h3 {
   padding: 0 10px;
 }
 
+#about .container {
+  background-color: var(--grey-100);
+  padding: 28px 40px;  
+  border-radius: 6px;
+  color: var(--black);         
+}
+
 .overlay {
-  background-color: #2bff22;
+  background-color: var(--grey-500);
   height: 100%;
   left: 0;
   position: absolute;
@@ -315,6 +340,16 @@ h3 {
   margin-left: 10px;
 }
 
+/* Education cards text colors */
+#education .card,
+#education .card * {
+  color: var(--black);
+}
+
+#education .location {
+  color: var(--grey-700) !important;
+}
+
 #experience .card-action {
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
@@ -332,6 +367,19 @@ h3 {
 #experience .col.s12.m2 {
   text-align: center;
 }
+
+/* Projects description text */
+#projects .card p {
+  color: var(--grey-700);
+}
+
+/* Projects: card-reveal */
+#projects .card-reveal,
+#projects .card-reveal * {
+  color: var(--black) !important;
+  background-color: var(--grey-050) !important;
+}
+
 
 .card.large .card-image {
   height: 230px;
@@ -428,7 +476,7 @@ a.hoverline:hover {
   /* background-size: cover;  */
   margin: -31px;
   margin-left: -7px;
-  border: 6px solid rgba(0, 77, 64, 0.4);
+  border: 6px solid var(--blue-300);
   border-radius: 50% !important;
 }
 .profile-pic img {

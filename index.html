@@ -131,6 +131,23 @@
         <a aria-label="Open Jax's CV in a new tab" href="assets/docs/cv_Skye2025.docx" target="_blank"
         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>CV</span></a>  
       </li>
+
+      <li class="bold">
+        <!--
+        ICONS:
+        1. mdi-action-description
+        2. mdi-file-folder
+        3. mdi-file-folder-open
+        4. mdi-file-attachment
+        5. mdi-file-folder-shared
+        -->
+        <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
+          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
+        <a aria-label="Open Jax's CV in a new tab" href="assets/docs/resume_skye2026.docx" target="_blank"
+        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
+      </li>
+
     </ul>
   </nav>
 
@@ -178,17 +195,20 @@
   <!-- Main Content-->
   <main>
     <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
+    <section id="intro" class="section scrollspy">
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
               <h2>Hi, I'm <span class="teal">Jax Skye, PhD</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <h5>Computational and Clinical Neuroscientist</h5>
+              <h5 style="color:#fff">
+                A <span class="typing" style="font-weight: 300; color:var(--blue-500)"></span>
+              </h5>
+              <h5>Computational Cognitive Neuroscientist</h5>
               <!-- <h5>Dr. Skye is a computational cognitive neuroscientist interested in emergent perception, computational modeling, and clinical neuroscience.</h5> -->
             </div>
+
             <!-- <div class="social">
               <a href="http://linkedin.com/in/varadbhogayata" target="_blank">
                 <button class="icon-btn linkedin">
@@ -211,14 +231,14 @@
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-
                   </span>
               </a> -->
-            </div>
-            <div class='buttons'>
+
+            <div class="buttons">
               <a href="#about" class="readme">Read More</a>
               <a href="#contact" class="contactme">Contact Me</a>
             </div>
+
           </div>
         </div>
       </div>
@@ -281,7 +301,7 @@
                 </p>
               </div>
             </div>
-            <div class="role brown-text text-darken-2">Software Engineer</div>
+            <div class="role grey-text text-darken-2">Software Engineer</div>
             <ul>
               <li>
                 Developed and managed the backend of an e-commerce platform using Flask, MongoDB, and AWS.
@@ -317,7 +337,7 @@ such as login/sign up, view a product, add a product to cart, checkout the order
                 </p>
               </div>
             </div>
-            <div class="role brown-text text-darken-2">Programmer Analyst</div>
+            <div class="role grey-text text-darken-2">Programmer Analyst</div>
             <ul>
               <li>
                 Customized a tree-based optimization algorithm that separates drugs into distinct groups to maximize the concurrent execution of drug
@@ -359,7 +379,7 @@ utilized perspective transformation, object detection, and object tracking to fi
                 </p>
               </div>
             </div>
-            <div class="role brown-text text-darken-2">Software Developer</div>
+            <div class="role grey-text text-darken-2">Software Developer</div>
             <ul>
               <li>
                 Programmed a cloud-based web app using Flask and JavaScript aimed at storing, visualizing, and tracking temperature and humidity
@@ -394,7 +414,7 @@ of each drug container to estimate the degradation of the drug.
                 </p>
               </div>
             </div>
-            <div class="role brown-text text-darken-2">Project Trainee</div>
+            <div class="role grey-text text-darken-2">Project Trainee</div>
             <ul>
               <li>
                 Designed a library management system for a local library, where we undertook activities like requirement
@@ -439,15 +459,14 @@ of each drug container to estimate the degradation of the drug.
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, AWS S3, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Search and filter songs based on language and singer.</li>
-                  <li>Create multiple playlists and add/remove songs to/from playlist.</li>
-                  <li>Scroll through recently played/viewed songs.</li>
+                  <li><b>Tools:</b> Python, scikit-learn, TensorFlow, NumPy, pandas, matplotlib, seaborn, Git, Apptainer, HPC</li>
+                  <li><b>Methods:</b> low-dimensional embeddings (UMAP), ridge and kernel ridge regression, clustering, cross-validation, held-out cohort evaluation</li>
+                  <li><b>Goals:</b> Predict longitudinal functional recovery after stroke from high-dimensional behavioral profiles</li>
+                  <li><b>Deliverables:</b> Reproducible modeling pipeline, cross-cohort validation results, peer-reviewed manuscript</li>
                 </ul>
                 <div class="card-action">
                   <!-- <a aria-label="Visit " href="https://galvanic-music.herokuapp.com/" target="_blank" data-position="top"
@@ -471,19 +490,20 @@ of each drug container to estimate the degradation of the drug.
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Brain Lesions & Theory of Mind Deficits<i
                     class="mdi-navigation-more-vert right"></i></span>
-                <!-- <p>
-                  Investigated impacts of brain lesions on functional and structural networks associated with Theory of Mind.
-                </p> -->
+                <p>
+                  Brain networks supporting theory of mind
+                </p>
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
+                  <li><b>Tools:</b> Python, MATLAB, FSL, FreeSurfer, MRIcroGL, Git</li>
+                  <li><b>Methods:</b> lesion–symptom mapping, lesion network mapping, structural and functional MRI, neuropsychological assessment</li>
+                  <li><b>Goals:</b> Identify brain networks supporting theory of mind and social inference</li>
+                  <li><b>Deliverables:</b> Network-level lesion maps, statistical models linking damage to behavior, manuscript in preparation</li>
                 </ul>
                 <div class="card-action">
                   <!-- <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
@@ -508,19 +528,20 @@ of each drug container to estimate the degradation of the drug.
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Latent Structure of Visuospatial Dysfunction<i
                     class="mdi-navigation-more-vert right"></i></span>
-                <!-- <p>
-                  Identified brain regions and networks associated with visuospatial function across eleven neuropsychological tests.
-                </p> -->
+                <p>
+                  Visuospatial impairment in neurological patients
+                </p>
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
+                  <li><b>Tools:</b> R, MATLAB, bash, Surf Ice, MRIcroGL</li>
+                  <li><b>Methods:</b> factor analysis, lesion–symptom mapping, lesion network mapping, cross-cohort prediction</li>
+                  <li><b>Goals:</b> Identify latent dimensions of visuospatial ability and predict impairment from lesion location</li>
+                  <li><b>Deliverables:</b> Doctoral dissertation, predictive models, peer-reviewed publications</li>
                 </ul>
                 <div class="card-action">
                   <!-- <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
@@ -545,19 +566,20 @@ of each drug container to estimate the degradation of the drug.
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Time Disorientation & Brain Injury<i
                     class="mdi-navigation-more-vert right"></i></span>
-                <!-- <p>
-                  Identified lesion sites associated with long-term time disorientation in the context of otherwise typical cognitive function.
-                </p> -->
+                <p>
+                  Neural basis of time orientation
+                </p>
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
+                  <li><b>Tools:</b> MATLAB, R, MRIcroGL, Surf Ice</li>
+                  <li><b>Methods:</b> lesion–symptom mapping, network localization, neuropsychological assessment</li>
+                  <li><b>Goals:</b> Localize neural systems supporting time orientation</li>
+                  <li><b>Deliverables:</b> Peer-reviewed publication (<i>Annals of Neurology</i>, study featured on cover), conference presentations</li>
                 </ul>
                 <div class="card-action">
                   <!-- <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
@@ -581,19 +603,20 @@ of each drug container to estimate the degradation of the drug.
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Cerebellar Mutism Syndrome<i
                     class="mdi-navigation-more-vert right"></i></span>
-                <!-- <p>
-                  DESCRIBE
-                </p> -->
+                <p>
+                  Anatomical underpinnings of tumor-related syndrome
+                </p>
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
+                  <li><b>Tools:</b> MATLAB, MRIcroGL, Surf Ice, clinical imaging data</li>
+                  <li><b>Methods:</b> lesion localization, group-level neuroanatomical analysis</li>
+                  <li><b>Goals:</b> Identify lesion sites associated with cerebellar mutism following pediatric tumor resection</li>
+                  <li><b>Deliverables:</b> Peer-reviewed publication (Brain Communications), graphical abstract</li>
                 </ul>
                 <div class="card-action">
                   <!-- <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
@@ -618,29 +641,22 @@ of each drug container to estimate the degradation of the drug.
               <div class="card-content">
                 <span class="card-title activator teal-text hoverline">Visual-Vestibular Conflict Detection<i
                     class="mdi-navigation-more-vert right"></i></span>
-                <!-- <p>
-                  EXPLAIN
-                </p> -->
+                <p>
+                  Multisensory signal integration in VR
+                </p>
               </div>
               <div class="card-reveal">
                 <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <!-- <span class="card-title grey-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
+                  <li><b>Tools:</b> MATLAB, Pupil Labs eye tracking, infrared motion tracking, HTC Vive</li>
+                  <li><b>Methods:</b> psychophysics, virtual reality stimulus presentation, multisensory integration modeling</li>
+                  <li><b>Goals:</b> Understand how the brain detects conflict between visual and vestibular signals</li>
+                  <li><b>Deliverables:</b> Experimental datasets, conference posters, undergraduate research project</li>
                 </ul>
                 <div class="card-action">
-                  <!-- <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a> -->
-                  <!-- <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/QuizUp"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a> -->
                 </div>
               </div>
             </div>
@@ -656,7 +672,7 @@ of each drug container to estimate the degradation of the drug.
         Languages and Databases
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Languages and Databases</h4>
+            <h4 class="grey-text light">Languages and Databases</h4>
             <div class="row text-center">
               <div class="col s4 m2">
                 <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
@@ -682,7 +698,7 @@ of each drug container to estimate the degradation of the drug.
 
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Libraries</h4>
+            <h4 class="grey-text light">Libraries</h4>
             <div class="row text-center">
               <div class="col s4 m2">
                 <img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
@@ -706,7 +722,7 @@ of each drug container to estimate the degradation of the drug.
         Frameworks
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Frameworks</h4>
+            <h4 class="grey-text light">Frameworks</h4>
             <div class="row text-center">
               <div class="col s4 m2">
                 <img alt="" src="/assets/img/django-logo.webp" class="responsive-img" />Django
@@ -733,7 +749,7 @@ of each drug container to estimate the degradation of the drug.
         Other
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Other</h4>
+            <h4 class="grey-text light">Other</h4>
             <div class="row text-center">
 
 
@@ -753,7 +769,7 @@ of each drug container to estimate the degradation of the drug.
         certifications
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Certificates</h4>
+            <h4 class="grey-text light">Certificates</h4>
             <div class="row text-left">
               <div class="container">
                 <div class="row">
@@ -798,7 +814,7 @@ of each drug container to estimate the degradation of the drug.
                 <p>
                   <span class="card-title"><a href="https://psychiatry.medicine.uiowa.edu/education/fellowships/inspire" target="_blank" class="teal-text hoverline">University of Iowa</a></span>
                 </p>
-                <p class="brown-text">Iowa City, Iowa, USA</p>
+                <p class="grey-text">Iowa City, Iowa, USA</p>
                 <p>
                   <b>Training Program: </b>Iowa Neuroscience Specialty Program in Research Education (INSPIRE)   
                   <br>
@@ -826,7 +842,7 @@ of each drug container to estimate the degradation of the drug.
                 <p>
                   <span class="card-title"><a href="https://neuroscience.grad.uiowa.edu/" target="_blank" class="teal-text hoverline">University of Iowa</a></span>
                 </p>
-                <p class="brown-text">Iowa City, Iowa, USA</p>
+                <p class="grey-text">Iowa City, Iowa, USA</p>
                 <p>
                   <b>Degree: </b>Doctorate of Philosophy in Neuroscience     
                   <br>
@@ -856,7 +872,7 @@ of each drug container to estimate the degradation of the drug.
                 <p>
                   <span class="card-title"><a href="https://www.unr.edu/neuroscience/" target="_blank" class="teal-text hoverline">University of Nevada - Reno</a></span>
                 </p>
-                <p class="brown-text">Reno, Nevada, USA</p>
+                <p class="grey-text">Reno, Nevada, USA</p>
                 <p>
                   <b>Degree: </b>Bachelor of Science in Neuroscience
                   <br>
@@ -919,16 +935,20 @@ of each drug container to estimate the degradation of the drug.
   </main>
 
   <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Cognitive Neuroscientist", "Problem Solver", "Fast Learner"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof Typed === "undefined") return;
+      new Typed(".typing", {
+        strings: ["Cognitive Neuroscientist.", "Problem Solver.", "Fast Learner.", "Exceptional Public Speaker."],
+        loop: true,
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 1200,
+        startDelay: 300
+      });
     });
   </script>
-
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
