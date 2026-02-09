@@ -339,6 +339,7 @@ h3 {
 .card .card-title {
   font-size: 24px;
 }
+
 .card .card-content .card-title {
   line-height: 2.5rem;
 }
@@ -578,7 +579,7 @@ a.hoverline:hover {
 }
 
 .readme:hover {
-  color: #00796b;
+  color: var(--blue-500);
   background-color: white;
 }
 
@@ -600,7 +601,7 @@ a.hoverline:hover {
   -webkit-border-radius: 5px;
 }
 .contactme:hover {
-  color: #5f6bff;
+  color: var(--blue-500);
   background-color: white;
 }
 
