@@ -150,7 +150,7 @@
         <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
           onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
           class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Jax's CV in a new tab" href="assets/docs/resume_skye2026.docx" target="_blank"
+        <a aria-label="Open Jax's CV in a new tab" href="assets/docs/resume_skye2026_site.docx" target="_blank"
         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
       </li>
 
@@ -207,9 +207,19 @@
         <div class="col-md-9">
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
-              <h2>Hi, I'm <span class="teal">Jax Skye, PhD</span></h2>
+              <!-- <h2>Hi, I'm <span class="teal">Jax Skye, PhD</span></h2> -->
+               <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                  <h2 style="margin:0;">Hi, I'm <span class="teal">Jax Skye, PhD</span></h2>
+                  <img src="assets/imgs/logo.png"
+                      alt="Jax Skye logo"
+                      style="height:48px; width:auto; object-fit:contain;">
+                </div>
+
+
+
+
               <h5 style="color:#fff">
-                A <span class="typing" style="font-weight: 300; color:var(--blue-500)"></span>
+                A <span class="typing" style="font-weight: 300; color:var(--green-500)"></span>
               </h5>
               <h5>Computational Cognitive Neuroscientist</h5>
               <!-- <h5>Dr. Skye is a computational cognitive neuroscientist interested in emergent perception, computational modeling, and clinical neuroscience.</h5> -->
@@ -996,7 +1006,7 @@ of each drug container to estimate the degradation of the drug.
         <p>
           <a aria-label="Email Jax" href="mailto:jax-skye@uiowa.edu" target="_blank" data-position="top"
             data-tooltip="Email Jax" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Jax" href="mailto:jax-skye@uiowa.edu"
+              class="fa fa-envelope style="color:#2bff22;""></i><a aria-label="Email Jax" href="mailto:jax-skye@uiowa.edu"
               class="hoverline">jax-skye@uiowa.edu</a></a>
         </p>
         <!-- <p>
@@ -1023,7 +1033,7 @@ of each drug container to estimate the degradation of the drug.
     document.addEventListener("DOMContentLoaded", function () {
       if (typeof Typed === "undefined") return;
       new Typed(".typing", {
-        strings: ["Cognitive Neuroscientist.", "Problem Solver.", "Fast Learner.", "Exceptional Public Speaker."],
+        strings: ["Cognitive Neuroscientist.", "Problem Solver.", "Fast Learner.", "Science Communicator."],
         loop: true,
         typeSpeed: 80,
         backSpeed: 40,
@@ -1050,6 +1060,16 @@ of each drug container to estimate the degradation of the drug.
       })
     })
   </script>
+
+  <footer style="margin:0; padding:8px 0; background:#111;">
+  <div style="text-align:center; font-size:0.85rem; color:#aaa;">
+    © 2026 Jax Skye · Cognitive Neuroscientist
+    <span style="margin:0 8px;">·</span>
+    <a href="#intro" style="color:#bbb; text-decoration:none;">Back to top ↑</a>
+  </div>
+</footer>
+
+
 </body>
 
 </html>
