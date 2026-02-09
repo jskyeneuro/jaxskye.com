@@ -352,7 +352,9 @@ h3 {
 #education .card * {
   color: var(--black);
 }
-
+#education .card {
+  background-color: var(--grey-050);
+}
 #education .location {
   color: var(--grey-700) !important;
 }
