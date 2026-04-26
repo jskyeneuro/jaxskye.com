@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <title>Low-Level Acoustic Feature Perception in Emotional Speech | Jax Skye</title>
+
+  <style>
+    .project-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--grey-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .project-topbar a.back-link {
+      color: var(--green-500);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .project-topbar a.back-link:hover {
+      color: var(--green-300);
+    }
+    .project-topbar .topbar-title {
+      color: var(--grey-100);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-left: 1px solid var(--grey-300);
+      padding-left: 16px;
+    }
+
+    .project-page {
+      padding-top: 80px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+
+    .project-hero {
+      padding: 48px 0 32px;
+      text-align: left;
+    }
+    .project-hero .project-label {
+      display: inline-block;
+      background: var(--blue-500);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .project-hero h1 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .project-hero .subtitle {
+      color: var(--green-500);
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .content-box {
+      background: var(--grey-100);
+      border-radius: 6px;
+      padding: 32px 40px;
+      margin-bottom: 28px;
+      color: var(--black);
+    }
+    .content-box h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .content-box p,
+    .content-box li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey-700);
+    }
+    .content-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .content-box ul li {
+      list-style-type: disc;
+      margin-bottom: 6px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-left: 0 !important;
+      list-style: none !important;
+    }
+    .tools-list li {
+      list-style: none !important;
+      background: var(--grey-500);
+      color: var(--grey-050);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+    }
+
+    .deliverables-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .deliverable-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--grey-500);
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 220px;
+      flex: 1 1 220px;
+    }
+    .deliverable-card:hover {
+      background: var(--blue-700);
+      border-color: var(--blue-300);
+    }
+    .deliverable-card .del-icon {
+      font-size: 1.6rem;
+      color: var(--blue-300);
+      flex-shrink: 0;
+    }
+    .deliverable-card:hover .del-icon {
+      color: #fff;
+    }
+    .deliverable-card .del-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .deliverable-card .del-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--grey-050);
+      margin-bottom: 2px;
+    }
+    .deliverable-card .del-meta {
+      font-size: 0.78rem;
+      color: var(--grey-300);
+    }
+    .deliverable-card:hover .del-title,
+    .deliverable-card:hover .del-meta {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .project-hero h1 { font-size: 1.6rem; }
+      .content-box { padding: 20px 20px; }
+      .project-topbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <div class="project-topbar">
+    <a href="/index.html" class="back-link">
+      <i class="fa fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <span class="topbar-title">Jax Skye, PhD</span>
+  </div>
+
+  <div class="project-page">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="project-hero">
+        <span class="project-label">Research Project</span>
+        <h1>Low-Level Acoustic Feature Perception in Emotional Speech</h1>
+        <p class="subtitle">Emotional prosodic context modulates sensitivity to pitch and loudness — and individual differences vary with subclinical psychopathology traits</p>
+      </div>
+
+      <!-- Hero image — update src when you have the image -->
+      <!-- <img src="/assets/imgs/epro_master.png"
+           alt="Emotional prosody acoustic feature perception"
+           style="width:100%; max-height:360px; object-fit:contain; background:var(--grey-700); border-radius:6px; margin-bottom:28px;"> -->
+
+      <!-- Aims -->
+      <div class="content-box">
+        <h2>Aims</h2>
+        <p>
+          Social communication relies not only on the words we speak but on how we speak them. Emotional
+          prosody, the modulation of pitch, tempo, loudness, and other acoustic features to convey emotional
+          state, is a fundamental channel of social communication. Prior work has shown that psychoacoustic
+          abilities predict emotional prosody recognition, and that individuals with conditions like autism
+          spectrum disorder (ASD) and social anxiety show differences in prosody perception. However,
+          most paradigms treat acoustic feature perception and emotional prosody recognition as separate
+          processes. A critical gap remains: can emotional context itself feed back to modulate sensitivity
+          to low-level acoustic features? This study tested this question directly using a psychoacoustic
+          oddball paradigm in which acoustic modulations were embedded within emotionally prosodic speech.
+        </p>
+        <ul>
+          <li>Aim 1: Determine whether emotional prosodic context (angry, happy, neutral) modulates sensitivity to low-level acoustic feature changes (specifically pitch and loudness) using accuracy and reaction time as dependent measures</li>
+          <li>Aim 2: Evaluate whether individual differences in emotion-modulated acoustic feature perception are associated with subclinical psychopathology traits, including autistic traits (AQ, SRS) and social anxiety (LSAS)</li>
+        </ul>
+      </div>
+
+      <!-- Description / Methods -->
+      <div class="content-box">
+        <h2>Description &amp; Methods</h2>
+        <p>
+          Neurotypical young adults (n = 50 main analysis; n = 53 quilted control; n = 59 shuffled control)
+          completed a three-interval forced-choice oddball paradigm. On each trial, participants heard three
+          sequential speech clips — semantically neutral utterances spoken with angry, happy, or neutral
+          prosody — and identified which of the first and third clips differed from the middle (target) clip.
+          Acoustic modulations of either pitch or loudness (3.5% change) were applied to one of the
+          flanking clips. Emotional context was interleaved randomly across trials. Participants also
+          completed three self-report psychopathology measures between task blocks: the Autism Quotient
+          (AQ), Social Responsiveness Scale–II (SRS), and Liebowitz Social Anxiety Scale (LSAS). Two
+          control conditions — quilted speech (local spectrotemporal statistics preserved, long-term
+          prosodic structure removed) and shuffled speech (all temporal structure destroyed) — were
+          administered to independent samples to isolate prosodic contributions to the observed effects.
+          Repeated-measures ANOVAs with emotional context as a within-subjects factor were used for the
+          main and control analyses; linear models evaluated the relationship between emotion difference
+          scores and psychopathology traits.
+        </p>
+        <p>
+          For loudness, emotional context significantly modulated accuracy (F(2,98) = 5.674, p = .005,
+          η²p = .104): happy prosody was identified less accurately than both angry (p = .003, d = .44)
+          and neutral (p = .025, d = .36). For pitch, neutral prosody yielded significantly higher accuracy
+          than both angry (p = .012, d = .46) and happy (p = .003, d = .57) contexts (F(2,96) = 7.429,
+          p = .001, η²p = .134). Control analyses supported a prosodic rather than purely acoustic
+          explanation: the loudness emotion effect was not replicated in shuffled speech, and the pitch
+          effect pattern differed between normal and control conditions. Intact prosodic structure also
+          enhanced overall psychoacoustic sensitivity relative to both control conditions. For Aim 2,
+          AQ and SRS total scores were associated with emotion-related differences in loudness perception,
+          while LSAS total scores were associated with emotion-related differences in pitch perception.
+        </p>
+
+        <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
+        <ul class="tools-list">
+          <li>R</li>
+          <li>Python</li>
+          <li>Prolific</li>
+          <li>Qualtrics</li>
+          <li>REDCap</li>
+          <li>3-Interval Forced-Choice Oddball Paradigm</li>
+          <li>Repeated-Measures ANOVA</li>
+          <li>Linear Mixed Effects Models</li>
+          <li>Speech Quilting</li>
+          <li>Autism Quotient (AQ)</li>
+          <li>Social Responsiveness Scale–II (SRS)</li>
+          <li>Liebowitz Social Anxiety Scale (LSAS)</li>
+        </ul>
+      </div>
+
+      <!-- Deliverables -->
+      <div class="content-box">
+        <h2>Deliverables</h2>
+        <p>Manuscript in preparation (projected submission Spring 2026). Presented at lab morning meeting, March 2026.</p>
+
+        <div class="deliverables-grid">
+
+          <a href="/assets/docs/publications/epro_manuscript.pdf" target="_blank" class="deliverable-card">
+            <i class="fa fa-file-text-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Low-level acoustic feature perception differs across affective prosody</span>
+              <span class="del-meta">Manuscript in preparation · 2026</span>
+            </div>
+          </a>
+
+          <a href="/assets/docs/presentations/epro_morning_meeting.pdf" target="_blank" class="deliverable-card">
+            <i class="fa fa-desktop del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Low-level acoustic feature perception is modulated by speaker emotion and feature type</span>
+              <span class="del-meta">Neurology Morning Meeting · 2026</span>
+            </div>
+          </a>
+
+          <a href="/assets/docs/posters/CNS_WSoE_2024_JDS_epro.pdf" target="_blank" class="deliverable-card">
+            <i class="fa fa-picture-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Low-level acoustic feature perception differs across affective prosody</span>
+              <span class="del-meta">Cognitive Neuroscience Society · Toronto · 2024</span>
+              <span class="del-meta">Wisconsin Symposium on Emotion · Madison · 2024</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.project-page -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+</body>
+</html>

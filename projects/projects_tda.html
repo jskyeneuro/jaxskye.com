@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <title>Topological Data Analysis of Brain Lesion Data | Jax Skye</title>
+
+  <style>
+    .project-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--grey-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .project-topbar a.back-link {
+      color: var(--green-500);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .project-topbar a.back-link:hover {
+      color: var(--green-300);
+    }
+    .project-topbar .topbar-title {
+      color: var(--grey-100);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-left: 1px solid var(--grey-300);
+      padding-left: 16px;
+    }
+
+    .project-page {
+      padding-top: 80px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+
+    .project-hero {
+      padding: 48px 0 32px;
+      text-align: left;
+    }
+    .project-hero .project-label {
+      display: inline-block;
+      background: var(--blue-500);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .project-hero h1 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .project-hero .subtitle {
+      color: var(--green-500);
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .content-box {
+      background: var(--grey-100);
+      border-radius: 6px;
+      padding: 32px 40px;
+      margin-bottom: 28px;
+      color: var(--black);
+    }
+    .content-box h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .content-box p,
+    .content-box li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey-700);
+    }
+    .content-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .content-box ul li {
+      list-style-type: disc;
+      margin-bottom: 6px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-left: 0 !important;
+      list-style: none !important;
+    }
+    .tools-list li {
+      list-style: none !important;
+      background: var(--grey-500);
+      color: var(--grey-050);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+    }
+
+    .deliverables-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .deliverable-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--grey-500);
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 220px;
+      flex: 1 1 220px;
+    }
+    .deliverable-card:hover {
+      background: var(--blue-700);
+      border-color: var(--blue-300);
+    }
+    .deliverable-card .del-icon {
+      font-size: 1.6rem;
+      color: var(--blue-300);
+      flex-shrink: 0;
+    }
+    .deliverable-card:hover .del-icon {
+      color: #fff;
+    }
+    .deliverable-card .del-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .deliverable-card .del-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--grey-050);
+      margin-bottom: 2px;
+    }
+    .deliverable-card .del-meta {
+      font-size: 0.78rem;
+      color: var(--grey-300);
+    }
+    .deliverable-card:hover .del-title,
+    .deliverable-card:hover .del-meta {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .project-hero h1 { font-size: 1.6rem; }
+      .content-box { padding: 20px 20px; }
+      .project-topbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <div class="project-topbar">
+    <a href="/index.html" class="back-link">
+      <i class="fa fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <span class="topbar-title">Jax Skye, PhD</span>
+  </div>
+
+  <div class="project-page">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="project-hero">
+        <span class="project-label">Research Project</span>
+        <h1>Topological Data Analysis of Brain Lesion Data</h1>
+        <p class="subtitle">Applying TDA Mapper to reveal the shape of behavioral impairment in brain lesion patients and predict functional recovery</p>
+      </div>
+
+      <!-- Hero image — update src when you have the image -->
+      <!-- <img src="/assets/imgs/tda_master.png"
+           alt="TDA Mapper brain lesion behavioral topology"
+           style="width:100%; max-height:360px; object-fit:contain; background:var(--grey-700); border-radius:6px; margin-bottom:28px;"> -->
+
+      <!-- Aims -->
+      <div class="content-box">
+        <h2>Aims</h2>
+        <p>
+          Brain lesion patients exhibit highly variable and complex patterns of behavioral impairment.
+          Data-driven prediction of outcomes and lesion location from behavior is hindered by the curse
+          of dimensionality — standard approaches like PCA and clustering may miss the nonlinear structure
+          that organizes patients in high-dimensional behavior space. Topological Data Analysis (TDA),
+          and the Mapper algorithm in particular, offers a framework for visualizing and characterizing
+          this structure without assuming linearity or requiring strong distributional assumptions.
+        </p>
+        <ul>
+          <li>Visualize the shape of the distribution of behavioral deficits in brain lesion patients using TDA Mapper</li>
+          <li>Characterize the neuroanatomical correlates of patient groupings identified by the Mapper graph</li>
+          <li>Predict 3-month functional outcomes from the acute behavioral topology using leave-one-out ridge regression</li>
+          <li>Develop and release an open-source Python toolbox implementing TDA Mapper for clinical neuroscience data</li>
+        </ul>
+      </div>
+
+      <!-- Description / Methods -->
+      <div class="content-box">
+        <h2>Description &amp; Methods</h2>
+        <p>
+          Two cohorts were analyzed: a unilateral stroke cohort from Washington University (n = 85) with
+          acute behavioral data, and the Iowa Neurological Patient Registry lesion cohort (n = 255) with
+          chronic behavioral data. The TDA Mapper algorithm was applied to each cohort's behavioral
+          profiles by first reducing dimensionality with UMAP, clustering within overlapping cover elements,
+          and constructing a graph where nodes represent patient groupings and edges reflect shared patients
+          across nodes. Lesion mapping using a proportional subtraction approach identified brain lesion
+          locations associated with each node. The acute WashU Mapper graph was used to predict 3-month
+          functional outcomes via leave-one-out ridge regression, and predictions were benchmarked against
+          high-dimensional, PCA, and UMAP approaches.
+        </p>
+        <p>
+          The Mapper graph revealed highly structured distributions of patients in high-dimensional behavior
+          space, with nodes corresponding to interpretable clinical profiles — including patients with left
+          motor deficits, right motor deficits, hemispatial neglect, worst walking, best recovery, and
+          lasting pain. Mapper-based outcome prediction outperformed standard approaches for multiple
+          chronic outcomes including Return to Normal Living Index, social function, depression, pain, and
+          functional independence. Many behavioral profiles correlated with lesion location, though some
+          were more strongly associated with demographic attributes.
+        </p>
+
+        <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
+        <ul class="tools-list">
+          <li>Python</li>
+          <li>KeplerMapper</li>
+          <li>UMAP</li>
+          <li>networkx</li>
+          <li>scikit-learn</li>
+          <li>NumPy</li>
+          <li>TDA Mapper Algorithm</li>
+          <li>Leave-One-Out Ridge Regression</li>
+          <li>Lesion Mapping</li>
+          <li>HPC / Apptainer</li>
+        </ul>
+      </div>
+
+      <!-- Deliverables -->
+      <div class="content-box">
+        <h2>Deliverables</h2>
+        <p>Work in progress. Poster presented at the Computational Psychiatry Symposium, April 2025.</p>
+
+        <div class="deliverables-grid">
+
+          <a href="/assets/docs/posters/mapper_comp_psychiatry.pdf" target="_blank" class="deliverable-card">
+            <i class="fa fa-picture-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Predicting outcomes from the topology of behavior in brain lesion patients</span>
+              <span class="del-meta">Computational Psychiatry Symposium · Iowa City · 2026</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.project-page -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+</body>
+</html>

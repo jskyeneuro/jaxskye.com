@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <title>Time Disorientation & Brain Injury | Jax Skye</title>
+
+  <style>
+    /* ── Page-specific overrides ── */
+
+    .project-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--grey-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .project-topbar a.back-link {
+      color: var(--green-500);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .project-topbar a.back-link:hover {
+      color: var(--green-300);
+    }
+    .project-topbar .topbar-title {
+      color: var(--grey-100);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-left: 1px solid var(--grey-300);
+      padding-left: 16px;
+    }
+
+    .project-page {
+      padding-top: 80px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+
+    .project-hero {
+      padding: 48px 0 32px;
+      text-align: left;
+    }
+    .project-hero .project-label {
+      display: inline-block;
+      background: var(--blue-500);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .project-hero h1 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .project-hero .subtitle {
+      color: var(--green-500);
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .content-box {
+      background: var(--grey-100);
+      border-radius: 6px;
+      padding: 32px 40px;
+      margin-bottom: 28px;
+      color: var(--black);
+    }
+    .content-box h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .content-box p,
+    .content-box li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey-700);
+    }
+    .content-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .content-box ul li {
+      list-style-type: disc;
+      margin-bottom: 6px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-left: 0 !important;
+      list-style: none !important;
+    }
+    .tools-list li {
+      list-style: none !important;
+      background: var(--grey-500);
+      color: var(--grey-050);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+    }
+
+    .deliverables-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .deliverable-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--grey-500);
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 220px;
+      flex: 1 1 220px;
+    }
+    .deliverable-card:hover {
+      background: var(--blue-700);
+      border-color: var(--blue-300);
+    }
+    .deliverable-card .del-icon {
+      font-size: 1.6rem;
+      color: var(--blue-300);
+      flex-shrink: 0;
+    }
+    .deliverable-card:hover .del-icon {
+      color: #fff;
+    }
+    .deliverable-card .del-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .deliverable-card .del-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--grey-050);
+      margin-bottom: 2px;
+    }
+    .deliverable-card .del-meta {
+      font-size: 0.78rem;
+      color: var(--grey-300);
+    }
+    .deliverable-card:hover .del-title,
+    .deliverable-card:hover .del-meta {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .project-hero h1 { font-size: 1.6rem; }
+      .content-box { padding: 20px 20px; }
+      .project-topbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <div class="project-topbar">
+    <a href="/index.html" class="back-link">
+      <i class="fa fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <span class="topbar-title">Jax Skye, PhD</span>
+  </div>
+
+  <!-- Page content -->
+  <div class="project-page">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="project-hero">
+        <span class="project-label">Research Project</span>
+        <h1>Time Disorientation & Brain Injury</h1>
+        <p class="subtitle">Localization of a medial temporal lobe–precuneus network for time orientation</p>
+      </div>
+
+      <!-- Hero image
+      <img src="/assets/imgs/ti_or_journal_cover_master.png"
+           alt="Time orientation brain lesion map"
+           style="width:100%; max-height:360px; object-fit:contain; background:var(--grey-700); border-radius:6px; margin-bottom:28px;"> -->
+
+      <!-- Aims -->
+      <div class="content-box">
+        <h2>Aims</h2>
+        <p>
+          Time orientation, or the ability to match one's personal sense of time with a universal reference, is a
+          fundamental cognitive process routinely assessed in neurological and neuropsychological evaluations.
+          Despite its clinical ubiquity, the regional neuroanatomy supporting time orientation remains poorly
+          understood. Large bilateral lesions have been loosely associated with time disorientation, but the
+          specific brain regions implicated by focal, unilateral damage were largely unknown.
+        </p>
+        <ul>
+          <li>Identify the brain regions and networks whose damage is associated with chronic time disorientation in patients with focal brain lesions</li>
+          <li>Characterize the relationship between time disorientation and memory impairment, and determine whether the two processes could be anatomically dissociated</li>
+        </ul>
+      </div>
+
+      <!-- Description / Methods -->
+      <div class="content-box">
+        <h2>Description &amp; Methods</h2>
+        <p>
+          550 patients with acquired focal brain lesions were identified from the Iowa Neurological Patient Registry.
+          Time orientation was assessed three or more months after lesion onset using the Benton Temporal Orientation
+          Test (BTOT); 39 patients met criteria for chronic time disorientation. Multivariate lesion-symptom mapping
+          (LSM) identified brain regions where damage was statistically associated with disorientation. Lesion network
+          mapping (LNM) then used normative resting-state fMRI connectome data to characterize the broader functional
+          network in which those lesion sites were embedded. Memory impairment was evaluated in parallel to assess
+          anatomical and behavioral overlap with time disorientation.
+        </p>
+        <p>
+          LSM revealed that damage to the precuneus, medial temporal lobes, and occipito-temporal cortex was most
+          strongly associated with time disorientation. LNM demonstrated that these regional findings converged on a
+          network connecting the precuneus and medial temporal lobe. A strong behavioral and anatomical association
+          was found between time disorientation and memory impairment, though the left posterior precuneus showed
+          involvement in time disorientation in the absence of severe memory impairment, suggesting partial
+          dissociability between the two processes.
+        </p>
+
+        <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
+        <ul class="tools-list">
+          <li>Multivariate Lesion-Symptom Mapping</li>
+          <li>Functional Lesion Network Mapping</li>
+          <li>White Matter Tractography</li>
+          <li>Normative Connectome Data</li>
+          <li>Neuropsychological Testing</li>
+          <li>MATLAB</li>
+          <li>R</li>
+          <li>FSL</li>
+          <li>MRIcroGL</li>
+          <li>SurfIce</li>
+        </ul>
+      </div>
+
+      <!-- Deliverables -->
+      <div class="content-box">
+        <h2>Deliverables</h2>
+        <p>Published in <i>Annals of Neurology</i> (2023), Vol. 94(3), pp. 421–433. The study was featured on the journal cover.</p>
+
+        <div class="deliverables-grid">
+          <a href="/assets/docs/publications/time_orientation.pdf" target="_blank" class="deliverable-card">
+          <!-- <a href="https://doi.org/10.1002/ana.26681" target="_blank" class="deliverable-card"> -->
+            <i class="fa fa-file-text-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Localization of a medial temporal lobe-precuneus network for time orientation</span>
+              <span class="del-meta">Annals of Neurology · 2023</span>
+            </div>
+          </a>
+
+          <!-- Poster: update href when file is available -->
+          <a href="/assets/docs/posters/sfnPoster2021_jaxSkye.pdf" target="_blank" class="deliverable-card">
+            <i class="fa fa-picture-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Neural circuitry of time orientation: a lesion study</span>
+              <span class="del-meta">Society for Neuroscience · 2021</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.project-page -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+</body>
+</html>

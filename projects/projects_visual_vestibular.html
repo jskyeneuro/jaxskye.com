@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <title>Visual-Vestibular Conflict Detection | Jax Skye</title>
+
+  <style>
+    .project-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--grey-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .project-topbar a.back-link {
+      color: var(--green-500);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .project-topbar a.back-link:hover {
+      color: var(--green-300);
+    }
+    .project-topbar .topbar-title {
+      color: var(--grey-100);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-left: 1px solid var(--grey-300);
+      padding-left: 16px;
+    }
+
+    .project-page {
+      padding-top: 80px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+
+    .project-hero {
+      padding: 48px 0 32px;
+      text-align: left;
+    }
+    .project-hero .project-label {
+      display: inline-block;
+      background: var(--blue-500);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .project-hero h1 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .project-hero .subtitle {
+      color: var(--green-500);
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .content-box {
+      background: var(--grey-100);
+      border-radius: 6px;
+      padding: 32px 40px;
+      margin-bottom: 28px;
+      color: var(--black);
+    }
+    .content-box h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      border-bottom: 2px solid var(--blue-300);
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .content-box p,
+    .content-box li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey-700);
+    }
+    .content-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .content-box ul li {
+      list-style-type: disc;
+      margin-bottom: 6px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-left: 0 !important;
+      list-style: none !important;
+    }
+    .tools-list li {
+      list-style: none !important;
+      background: var(--grey-500);
+      color: var(--grey-050);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 0 !important;
+    }
+
+    .deliverables-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .deliverable-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--grey-500);
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      min-width: 220px;
+      flex: 1 1 220px;
+    }
+    .deliverable-card:hover {
+      background: var(--blue-700);
+      border-color: var(--blue-300);
+    }
+    .deliverable-card .del-icon {
+      font-size: 1.6rem;
+      color: var(--blue-300);
+      flex-shrink: 0;
+    }
+    .deliverable-card:hover .del-icon {
+      color: #fff;
+    }
+    .deliverable-card .del-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .deliverable-card .del-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--grey-050);
+      margin-bottom: 2px;
+    }
+    .deliverable-card .del-meta {
+      font-size: 0.78rem;
+      color: var(--grey-300);
+    }
+    .deliverable-card:hover .del-title,
+    .deliverable-card:hover .del-meta {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .project-hero h1 { font-size: 1.6rem; }
+      .content-box { padding: 20px 20px; }
+      .project-topbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <div class="project-topbar">
+    <a href="/index.html" class="back-link">
+      <i class="fa fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <span class="topbar-title">Jax Skye, PhD</span>
+  </div>
+
+  <!-- Page content -->
+  <div class="project-page">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="project-hero">
+        <span class="project-label">Research Project</span>
+        <h1>Visual-Vestibular Conflict Detection</h1>
+        <p class="subtitle">How active head movement and fixation type modulate the brain's ability to detect mismatches between visual and vestibular signals</p>
+      </div>
+
+      <!-- Hero image -->
+      <!-- <img src="/assets/imgs/starfield_chatgptgenerated.png"
+           alt="Visual-vestibular conflict detection in VR"
+           style="width:100%; max-height:360px; object-fit:contain; background:var(--grey-700); border-radius:6px; margin-bottom:28px;"> -->
+
+      <!-- Aims -->
+      <div class="content-box">
+        <h2>Aims</h2>
+        <p>
+          Stable perception of a visual environment depends on the brain's ability to compare and evaluate
+          the congruence of visual and vestibular signals. When these signals mismatch as in simulator
+          sickness, vertigo, or motion sickness the consequences can be significant. Prior work suggested
+          that sensitivity to visual-vestibular conflict is modulated by fixation type, with eye movement
+          signals playing an important role. This research project investigated whether active
+          head movement signals, specifically neck motor commands and proprioception, also modulate
+          conflict detection, and whether the type of visual fixation (head-fixed vs. scene-fixed) interacts
+          with this.
+        </p>
+        <ul>
+          <li>Determine whether active head movement improves visual-vestibular conflict detection relative to passive head movement</li>
+          <li>Test whether scene-fixed fixation enhances conflict detection compared to head-fixed fixation</li>
+          <li>Assess the interaction between head movement type and fixation condition on conflict sensitivity (PSE) and precision (JND)</li>
+        </ul>
+      </div>
+
+      <!-- Description / Methods -->
+      <div class="content-box">
+        <h2>Description &amp; Methods</h2>
+        <p>
+          16 healthy adult participants completed a two-alternative forced-choice (2AFC) task across 4 blocks
+          of 302 trials each. Participants were seated in a rotating chair and presented with a starfield
+          stimulus via an HTC Vive Pro head-mounted display. On each trial, head movement occurred either
+          actively (self-generated) or passively (externally driven), and visual fixation was either
+          head-fixed (fixation point moved with the head) or scene-fixed (fixation point remained stationary
+          in the world). Visual gain — the ratio of visual to vestibular motion — was varied between 0.7
+          and 1.3. Participants judged whether the visual scene moved "with" or "against" the direction of
+          head motion, allowing estimation of the point of subjective equality (PSE) and just-noticeable
+          difference (JND) for each condition via psychometric curve fitting. Head position was tracked
+          using OptiTrack Prime 13 infrared motion capture and eye movements were recorded using a
+          Pupil Labs eye-tracking add-on.
+        </p>
+        <p>
+          Results showed that active head movement with scene-fixed fixation produced the best conflict
+          detection, with a significant effect of active vs. passive movement on PSE (F(1,15) = 11.15,
+          p = 0.045) and a trend toward significance for JND (F(1,15) = 3.851, p = 0.069). Scene-fixed
+          fixation yielded a significant effect on JND compared to head-fixed fixation (F(1,15) = 5.552,
+          p = 0.033). These findings suggest that conflict detection is modulated by motor commands
+          including both eye and head movement signals, with scene-fixed fixation potentially reducing
+          retinal image motion velocity and increasing precision in head movement estimation.
+        </p>
+
+        <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
+        <ul class="tools-list">
+          <li>MATLAB</li>
+          <li>HTC Vive Pro HMD</li>
+          <li>OptiTrack Prime 13</li>
+          <li>Pupil Labs Eye Tracking</li>
+          <li>Psychophysics</li>
+          <li>2AFC Task Design</li>
+          <li>Psychometric Curve Fitting</li>
+          <li>VR Stimulus Presentation</li>
+          <li>Multisensory Integration Modeling</li>
+        </ul>
+      </div>
+
+      <!-- Deliverables -->
+
+      <!-- Deliverables -->
+      <div class="content-box">
+        <h2>Deliverables</h2>
+        <p>Poster presented at the Vision Sciences Society 19th Annual Meeting, May 2019.</p>
+
+        <div class="deliverables-grid">
+
+          <a href="https://jov.arvojournals.org/article.aspx?articleid=2751148" target="_blank" class="deliverable-card">
+            <i class="fa fa-external-link del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Visual-vestibular conflict detection is best during active head movement with scene-fixed fixation</span>
+              <span class="del-meta">VSS Abstract · Vision Sciences Society · 2019</span>
+            </div>
+          </a>
+
+          <a href="/assets/docs/posters/Vss_2019_Poster.png" target="_blank" class="deliverable-card">
+            <i class="fa fa-picture-o del-icon"></i>
+            <div class="del-text">
+              <span class="del-title">Conference Poster PDF</span>
+              <span class="del-meta">Vision Sciences Society · May 2019</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.project-page -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+</body>
+</html>
