@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,68 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 0;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-page {
+      padding-left: 190px;
+    }
+    .project-topbar {
+      left: 190px;
+      width: calc(100% - 190px);
+    }
   </style>
 </head>
 
 <body>
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -230,17 +291,10 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Stroke produces a wide range of behavioral deficits whose trajectories vary substantially across
-          patients. A central but underexplored question is: what is the shape of stroke-induced behavioral
-          impairment across a patient population, and what does this structure reveal about the relationship
-          between brain structure and function? Prior work showed that behavioral deficits after stroke are highly
-          variable, strongly influenced by lesion size and location, and change dramatically during recovery,
-          yet some recovery trajectories are more predictable than others. Standard linear approaches to
-          dimensionality reduction (e.g., PCA) may miss the nonlinear structure that organizes patients in
-          high-dimensional behavior space.
+          Stroke produces a wide range of behavioral deficits whose trajectories vary substantially across patients. Standard approaches (e.g., principal component analysis) to making sense of that variation can miss structure that's actually there. This project asked whether behavioral profiles of stroke patients have a meaningful shape, and if so, whether that shape could tell us something useful: which patients are similar, where their brain damage tends to be, and which early measure best predict recovery months later.
         </p>
         <ul>
-          <li>Characterize the high-dimensional geometry of post-stroke behavioral profiles using nonlinear dimensionality reduction (UMAP), and determine whether patients are distributed along a continuous low-dimensional manifold</li>
+          <li>Characterize the geometry of post-stroke behavioral profiles using nonlinear dimensionality reduction (UMAP)</li>
           <li>Identify behavioral archetypes (characteristic profiles that serve as landmarks across this manifold) and test whether they correlate with lesion location</li>
           <li>Benchmark the predictive power of nonlinear embeddings against linear alternatives (PCA, Factor Analysis, K-Means, hierarchical clustering) for predicting chronic functional, motor, and cognitive outcomes</li>
           <li>Identify a minimal set of subacute behavioral measures that predict chronic outcomes as accurately as the full test battery</li>
@@ -249,32 +303,12 @@
 
       <!-- Description / Methods -->
       <div class="content-box">
-        <h2>Description &amp; Methods</h2>
+        <h2>Description &amp; Main Findings</h2>
         <p>
-          96 adults who sustained a first-time unilateral ischemic stroke were assessed 7–14 days post-stroke
-          (subacute epoch) on 78 behavioral measures spanning motor function, language, visuospatial
-          attention, and memory. Chronic functional, motor, and cognitive outcomes were assessed at
-          3 months post-stroke. Five dimensionality reduction techniques (UMAP, PCA, Factor Analysis,
-          K-Means clustering, and hierarchical agglomerative clustering) were applied to the subacute
-          behavioral data to extract low-dimensional embeddings. Ridge regression with 50-repeat 80/20
-          cross-validation was used to predict 188 chronic outcomes from each embedding, with scrambled-data
-          comparisons to guard against overfitting. Prediction accuracy distributions were compared across
-          embeddings using the Mann-Whitney U-test. Structural MRI lesion data from 75 patients were used
-          in multivariate lesion-symptom mapping to identify brain regions associated with behavioral profiles
-          derived from the UMAP embedding.
+          96 adults assessed 7–14 days after ischemic stroke completed 78 behavioral measures. Chronic outcomes were assessed at 3 months. Five dimensionality reduction techniques were applied to the subacute data and ridge regression with cross-validation was used to predict 188 chronic outcomes from each.
         </p>
         <p>
-          UMAP embeddings outperformed all other dimensionality reduction approaches, yielding functional
-          outcome predictions statistically equivalent to those from all 78 predictors — across multiple
-          embedding dimensionalities. The 2D UMAP embedding revealed a continuous behavioral manifold
-          with no strong clusters, which was summarized using 8 K-Means-derived behavioral archetypes.
-          Four of these archetypes localized significantly to distinct brain regions, including lateralized motor
-          profiles associating with contralateral hemisphere damage and a language-deficit profile linking to
-          left posterior deep white matter and the superior longitudinal fasciculus. Finally, an iterative
-          procedure identified two subacute measures — Combined Walking Index and BVMT 25-minute
-          delayed recall — whose combination predicted functional outcomes as well as all 78 predictors.
-          Adding two fine motor measures (right ARAT pinch item; left 9-Hole Grooved Pegboard) extended
-          comparable prediction accuracy to motor outcomes as well.
+          UMAP outperformed all other approaches, yielding functional outcome predictions equivalent to using all 78 predictors. The 2D embedding revealed a continuous behavioral manifold with 8 interpretable archetypes, four of which localized to distinct brain regions. Just four subacute measures (Combined Walking Index, BVMT 25-minute delayed recall, right-hand ARAT pinch, and left-hand 9-Hole Grooved Pegboard) predicted outcomes as well as the full battery.
         </p>
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>

@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,68 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 0;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-page {
+      padding-left: 190px;
+    }
+    .project-topbar {
+      left: 190px;
+      width: calc(100% - 190px);
+    }
   </style>
 </head>
 
 <body>
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -217,7 +278,7 @@
       <div class="project-hero">
         <span class="project-label">Research Project</span>
         <h1>Low-Level Acoustic Feature Perception in Emotional Speech</h1>
-        <p class="subtitle">Emotional prosodic context modulates sensitivity to pitch and loudness — and individual differences vary with subclinical psychopathology traits</p>
+        <p class="subtitle">Emotional prosodic context modulates sensitivity to pitch and loudness; individual differences vary with subclinical psychopathology traits</p>
       </div>
 
       <!-- Hero image — update src when you have the image -->
@@ -229,7 +290,8 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Social communication relies not only on the words we speak but on how we speak them. Emotional
+          Speech carries meaning by the words spoken and the emotional tone in which they are delivered. Emotional prosody, or the way pitch, tempo, and loudness are varied to convey feeling, is a core channel of social comunication. Decades of research have examined how well people recognize emotional prosody, but a more basic question has gone largely unasked: Does the emotional content of speech change how the auditory system processes the acoustic signal itself?
+          <!-- Social communication relies not only on the words we speak but on how we speak them. Emotional
           prosody, the modulation of pitch, tempo, loudness, and other acoustic features to convey emotional
           state, is a fundamental channel of social communication. Prior work has shown that psychoacoustic
           abilities predict emotional prosody recognition, and that individuals with conditions like autism
@@ -237,67 +299,50 @@
           most paradigms treat acoustic feature perception and emotional prosody recognition as separate
           processes. A critical gap remains: can emotional context itself feed back to modulate sensitivity
           to low-level acoustic features? This study tested this question directly using a psychoacoustic
-          oddball paradigm in which acoustic modulations were embedded within emotionally prosodic speech.
+          oddball paradigm in which acoustic modulations were embedded within emotionally prosodic speech. -->
         </p>
         <ul>
-          <li>Aim 1: Determine whether emotional prosodic context (angry, happy, neutral) modulates sensitivity to low-level acoustic feature changes (specifically pitch and loudness) using accuracy and reaction time as dependent measures</li>
-          <li>Aim 2: Evaluate whether individual differences in emotion-modulated acoustic feature perception are associated with subclinical psychopathology traits, including autistic traits (AQ, SRS) and social anxiety (LSAS)</li>
+          <li>Identify differences in pitch and loudness perception across three emotional states of the speaker: happy, angry, and neutral</li>
+          <li>Explore the relationship between pitch and loudness sensitivity and socially relevant psychopathology traits in a nonclinical population</li>
         </ul>
       </div>
 
       <!-- Description / Methods -->
       <div class="content-box">
-        <h2>Description &amp; Methods</h2>
+        <h2>Description &amp; Main Findings</h2>
         <p>
-          Neurotypical young adults (n = 50 main analysis; n = 53 quilted control; n = 59 shuffled control)
-          completed a three-interval forced-choice oddball paradigm. On each trial, participants heard three
-          sequential speech clips — semantically neutral utterances spoken with angry, happy, or neutral
-          prosody — and identified which of the first and third clips differed from the middle (target) clip.
-          Acoustic modulations of either pitch or loudness (3.5% change) were applied to one of the
-          flanking clips. Emotional context was interleaved randomly across trials. Participants also
-          completed three self-report psychopathology measures between task blocks: the Autism Quotient
-          (AQ), Social Responsiveness Scale–II (SRS), and Liebowitz Social Anxiety Scale (LSAS). Two
-          control conditions — quilted speech (local spectrotemporal statistics preserved, long-term
-          prosodic structure removed) and shuffled speech (all temporal structure destroyed) — were
-          administered to independent samples to isolate prosodic contributions to the observed effects.
-          Repeated-measures ANOVAs with emotional context as a within-subjects factor were used for the
-          main and control analyses; linear models evaluated the relationship between emotion difference
-          scores and psychopathology traits.
+          Neurotypical adults listened to semantically neutral clips spoken with angry, happy, or neutral prosody and judged which one was altered in pitch or loudness. Two control conditions removed prosodic structure of the speech clips were administered to independent samples to isolate whether observed effects were due to prosodic features or were purely acoustic.
         </p>
         <p>
-          For loudness, emotional context significantly modulated accuracy (F(2,98) = 5.674, p = .005,
-          η²p = .104): happy prosody was identified less accurately than both angry (p = .003, d = .44)
-          and neutral (p = .025, d = .36). For pitch, neutral prosody yielded significantly higher accuracy
-          than both angry (p = .012, d = .46) and happy (p = .003, d = .57) contexts (F(2,96) = 7.429,
-          p = .001, η²p = .134). Control analyses supported a prosodic rather than purely acoustic
-          explanation: the loudness emotion effect was not replicated in shuffled speech, and the pitch
-          effect pattern differed between normal and control conditions. Intact prosodic structure also
-          enhanced overall psychoacoustic sensitivity relative to both control conditions. For Aim 2,
-          AQ and SRS total scores were associated with emotion-related differences in loudness perception,
-          while LSAS total scores were associated with emotion-related differences in pitch perception.
+          Emotional context significantly modulated perception of both features, but in different ways. Loudness differences were detected less accurately than angry or neutral speech, an effect that disappeared in the control condition, confirming it depended on intact prosodic structure. For pitch, a different pattern emerged. The highest accuracy was in the neutral context and this neutral advantage was absent in the control condition, again implicating prosodic structure in the observed effect. Notably, intact prosodic speech produced substantially higher overall psychoacoustic sensitivity than either control condition. 
+        </p> 
+        <p>
+          Higher autistic traits predicted a smaller loudness advantage for neutral over happy speech, while higher social anxiety predicted a smaller pitch advantage for neutral over both emotional conditions. 
         </p>
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
         <ul class="tools-list">
-          <li>R</li>
-          <li>Python</li>
-          <li>Prolific</li>
-          <li>Qualtrics</li>
-          <li>REDCap</li>
+          <li>Psychoacoustic sensitivity</li>
+          <li>Autism Quotient (AQ)</li>
+          <li>Social Responsiveness Scale–II (SRS)</li>
+          <li>Liebowitz Social Anxiety Scale (LSAS)</li>
           <li>3-Interval Forced-Choice Oddball Paradigm</li>
           <li>Repeated-Measures ANOVA</li>
           <li>Linear Mixed Effects Models</li>
           <li>Speech Quilting</li>
-          <li>Autism Quotient (AQ)</li>
-          <li>Social Responsiveness Scale–II (SRS)</li>
-          <li>Liebowitz Social Anxiety Scale (LSAS)</li>
+          <li>R</li>
+          <li>Python</li>
+          <li>JASP</li>
+          <li>Prolific</li>
+          <li>Qualtrics</li>
+          <li>REDCap</li>
         </ul>
       </div>
 
       <!-- Deliverables -->
       <div class="content-box">
         <h2>Deliverables</h2>
-        <p>Manuscript in preparation (projected submission Spring 2026). Presented at lab morning meeting, March 2026.</p>
+        <p>Analyses complete, manuscript in preparation (projected submission Spring 2026). Presented at lab morning meeting, March 2026.</p>
 
         <div class="deliverables-grid">
 

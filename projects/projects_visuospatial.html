@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,68 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 0;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-page {
+      padding-left: 190px;
+    }
+    .project-topbar {
+      left: 190px;
+      width: calc(100% - 190px);
+    }
   </style>
 </head>
 
 <body>
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -230,40 +291,40 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Visuospatial ability encompasses a broad range of cognitive functions — from navigating an environment
+          <!-- Visuospatial ability encompasses a broad range of cognitive functions — from navigating an environment
           to constructing mental representations of objects in space — yet the latent structure underlying this
           diversity is poorly understood. Similarly, while focal brain damage is known to produce visuospatial
           deficits, the specific neuroanatomical substrates responsible remain incompletely characterized.
           This dissertation addressed both the cognitive architecture and the neuroanatomy of visuospatial
-          ability using a large cohort of patients with acquired focal brain lesions.
+          ability using a large cohort of patients with acquired focal brain lesions. -->
+          Visuospatial ability refers to a broad range of cognitive functions, from navigating an environment to mentally rotating objects in space, and can be impaired in various ways following brain lesions. Despite its clinical relevance, the latent factor structure of visuospatial ability and its neuroanatomical substrates remain incompletely characterized. 
+          This dissertation addressed both questions using a large cohort of patients with focal brain lesions (N=480).  
         </p>
         <ul>
           <li>Identify the latent factor structure of visuospatial ability using data-driven psychometric modeling in patients with focal brain lesions</li>
-          <li>Localize brain regions and networks whose damage is associated with domain-general visuospatial dysfunction using lesion-symptom mapping</li>
+          <li>Localize brain regions and networks whose damage is associated with domain-general visuospatial dysfunction</li>
           <li>Test whether predictive models of visuospatial impairment based on lesion location generalize to an independent cohort</li>
         </ul>
       </div>
 
       <!-- Description / Methods -->
       <div class="content-box">
-        <h2>Description &amp; Methods</h2>
+        <h2>Description &amp; Main Findings</h2>
         <p>
           Patients with focal brain lesions from the Iowa Neurological Patient Registry completed a battery
-          of neuropsychological tests sensitive to visuospatial dysfunction. Factor analysis and structural
-          equation modeling were used to identify the latent factor structure of visuospatial ability in a
-          data-driven manner. Lesion-symptom mapping (LSM) was then applied to link latent visuospatial
+          of eleven neuropsychological tests sensitive to visuospatial dysfunction. Factor analysis and structural was used to identify the latent factor structure of visuospatial dysfunction in a
+          data-driven manner. Lesion-symptom mapping (LSM) and lesion network mapping (LNM) were then applied to link latent visuospatial
           factors to lesion location, white matter disconnections, and lesion-associated functional networks.
           Predictive models were subsequently evaluated in an independent cohort to assess cross-cohort
-          generalizability.
+          generalizability of neuroanatomical findings.
         </p>
         <p>
-          Results revealed a single domain-general visuospatial factor that accounted for shared variance
-          across tests. LSM identified damage to the right basal ganglia, higher-order visual cortex, and
+          Results revealed a single domain-general visuospatial factor that accounted for shared variance across tests. Damage to the right putamen, higher-order visual cortex, and
           occipital white matter bilaterally as most strongly associated with domain-general visuospatial
           dysfunction. The right putamen and surrounding white matter emerged as particularly important
           regional contributors. Predictive models of chronic visuospatial impairment based on lesion
           location showed meaningful generalization to the independent cohort, supporting the translational
-          potential of this approach.
+         value of this work.
         </p>
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>

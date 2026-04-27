@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,70 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 56px;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    /* Push content right to clear the sidebar */
+    .project-page {
+      padding-left: 190px;
+    }
+    /* Also push the topbar text to clear sidebar */
+    .project-topbar {
+      padding-left: 206px;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>    
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -230,15 +293,15 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Cerebellar mutism syndrome (CMS) is a debilitating postoperative complication affecting approximately
+          Cerebellar Mutism Syndrom (CMS) is a debilitating postoperative complication affecting approximately 25% of children who undergo posterior fossa tumor resection. CMS is characterized by mutism, emotional lability, and executive dysfunction. Prior work from our group identified damage to the cerebellar outflow pathway as a key anatomical risk factor. This project attempted to replicate these findings in an independent cohort and whether lesion location could reliably stratify surgical risk.
+          <!-- Cerebellar mutism syndrome (CMS) is a debilitating postoperative complication affecting approximately
           25% of pediatric patients who undergo cerebellar tumor resection. It is characterized by emotional
           lability, executive dysfunction, and language deficits, and is associated with worse long-term
           cognitive outcomes. Prior work by our group identified damage to the cerebellar outflow pathway (the deep cerebellar nuclei and superior cerebellar peduncles) as a key risk factor. This project
-          sought to test the replicability and generalizability of those findings in an independent cohort.
+          sought to test the replicability and generalizability of those findings in an independent cohort. -->
         </p>
         <ul>
-          <li>Evaluate whether damage to the cerebellar outflow pathway replicates as a risk factor for CMS in an independent pediatric cohort</li>
-          <li>Characterize the lesion locations associated with CMS development across patients varying in age, tumor type, and surgical approach</li>
+          <li>Evaluate whether extent of damage to the cerebellar outflow pathway predicts CMS development in a pediatric cohort</li>
           <li>Strengthen the neuroanatomical basis for CMS to inform optimal surgical planning and risk stratification</li>
         </ul>
       </div>
@@ -247,20 +310,10 @@
       <div class="content-box">
         <h2>Description &amp; Methods</h2>
         <p>
-          56 pediatric patients ranging from five months to 14 years of age who underwent cerebellar tumor
-          resection were included in this observational study. Surgical lesion locations were mapped and
-          analyzed in relation to whether each patient developed CMS postoperatively. The overlap between
-          each patient's lesion and the cerebellar outflow pathway was quantified and compared between
-          CMS-positive and CMS-negative groups. Results were also evaluated against the lesion-symptom
-          map derived from our group's prior cohort to assess cross-cohort consistency.
+          Pediatric patients from two sites who underwent posterior fossa tumor resection were included and tumor resection cavities were mapped. THese lesion masks were overlapped with the cerebellar outflow pathway and the extent of overlap was compared between CMS+ and CMS- patients. A lesion map derived from our group's prior cohort was also tested. 
         </p>
         <p>
-          CMS-positive patients (n = 10) showed significantly greater lesion overlap with the cerebellar
-          outflow pathway compared to CMS-negative patients (Cohen's d = 0.73, p = .05). Overlap with the
-          previously derived CMS lesion-symptom map was also significantly greater in CMS-positive patients
-          (Cohen's d = 1.1, p = .004). These results replicate and extend prior findings, reinforcing the
-          cerebellar outflow pathway as a reliable anatomical risk factor for CMS and demonstrating
-          generalizability across independent cohorts.
+          CMS+ patients showed significantly greater lesion overlap with the cerebellar outflow pathway compared to CMS- patients, and significantly greater overlap with the previously derived lesion map. These results replicate and extend prior findings, reinforcing the cerebellar outflowpathway as a reliable anatomical risk factor across independent cohorts.
         </p>
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>

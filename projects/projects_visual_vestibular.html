@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,68 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 0;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-page {
+      padding-left: 190px;
+    }
+    .project-topbar {
+      left: 190px;
+      width: calc(100% - 190px);
+    }
   </style>
 </head>
 
 <body>
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -230,14 +291,9 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Stable perception of a visual environment depends on the brain's ability to compare and evaluate
-          the congruence of visual and vestibular signals. When these signals mismatch as in simulator
-          sickness, vertigo, or motion sickness the consequences can be significant. Prior work suggested
-          that sensitivity to visual-vestibular conflict is modulated by fixation type, with eye movement
-          signals playing an important role. This research project investigated whether active
+          Stable perception of a visual environment depends on the brain's ability to compare and evaluate the congruence of visual and vestibular signals. When these signals mismatch as in simulator sickness, vertigo, or motion sickness the consequences can be significant. Prior work suggested that sensitivity to visual-vestibular conflict is modulated by fixation type, with eye movement signals playing an important role. This research project investigated whether active
           head movement signals, specifically neck motor commands and proprioception, also modulate
-          conflict detection, and whether the type of visual fixation (head-fixed vs. scene-fixed) interacts
-          with this.
+          conflict detection, and whether the type of visual fixation (head-fixed vs. scene-fixed) interacts with this.
         </p>
         <ul>
           <li>Determine whether active head movement improves visual-vestibular conflict detection relative to passive head movement</li>
@@ -248,45 +304,28 @@
 
       <!-- Description / Methods -->
       <div class="content-box">
-        <h2>Description &amp; Methods</h2>
+        <h2>Description &amp; Main Findings</h2>
         <p>
-          16 healthy adult participants completed a two-alternative forced-choice (2AFC) task across 4 blocks
-          of 302 trials each. Participants were seated in a rotating chair and presented with a starfield
-          stimulus via an HTC Vive Pro head-mounted display. On each trial, head movement occurred either
-          actively (self-generated) or passively (externally driven), and visual fixation was either
-          head-fixed (fixation point moved with the head) or scene-fixed (fixation point remained stationary
-          in the world). Visual gain — the ratio of visual to vestibular motion — was varied between 0.7
-          and 1.3. Participants judged whether the visual scene moved "with" or "against" the direction of
-          head motion, allowing estimation of the point of subjective equality (PSE) and just-noticeable
-          difference (JND) for each condition via psychometric curve fitting. Head position was tracked
-          using OptiTrack Prime 13 infrared motion capture and eye movements were recorded using a
-          Pupil Labs eye-tracking add-on.
+          16 healthy adults completed a two-alternative forced-choice task in which head movement was eather self-generated or externally driven, and visual fixation was either head-fixed or scene-fixed. Participants viewed a starfield stimulus in a virtual reality head-mounted display and judged whether the visual scene moved with or against their head motion across trials.
         </p>
         <p>
-          Results showed that active head movement with scene-fixed fixation produced the best conflict
-          detection, with a significant effect of active vs. passive movement on PSE (F(1,15) = 11.15,
-          p = 0.045) and a trend toward significance for JND (F(1,15) = 3.851, p = 0.069). Scene-fixed
-          fixation yielded a significant effect on JND compared to head-fixed fixation (F(1,15) = 5.552,
-          p = 0.033). These findings suggest that conflict detection is modulated by motor commands
-          including both eye and head movement signals, with scene-fixed fixation potentially reducing
-          retinal image motion velocity and increasing precision in head movement estimation.
+          Active head movement with scene-fixed fixation produced the best conflict detection. Scene-fixed fixation significantly improved precision relative to head-fixed fixation, and active movement showed a significant effect on conflict sensitivity. These findings suggest conflict detection is modulated by motor commands, including eye and head movement efference copies. Scene-fixed fixation likely reduces retinal image motion velocity, while active movement increases precision in head movement estimation.
         </p>
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
         <ul class="tools-list">
-          <li>MATLAB</li>
+          <li>Multisensory Integration Modeling</li>
           <li>HTC Vive Pro HMD</li>
-          <li>OptiTrack Prime 13</li>
+          <li>OptiTrack Infrared Tracking</li>
           <li>Pupil Labs Eye Tracking</li>
           <li>Psychophysics</li>
           <li>2AFC Task Design</li>
           <li>Psychometric Curve Fitting</li>
           <li>VR Stimulus Presentation</li>
-          <li>Multisensory Integration Modeling</li>
+          <li>MATLAB</li>
+          <li>C#</li>
         </ul>
       </div>
-
-      <!-- Deliverables -->
 
       <!-- Deliverables -->
       <div class="content-box">

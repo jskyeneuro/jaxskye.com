@@ -60,8 +60,11 @@
     }
 
     .project-hero {
-      padding: 48px 0 32px;
+      padding: 32px 40px 32px;
       text-align: left;
+      background: var(--grey-700);
+      border-radius: 6px;
+      margin-bottom: 28px;
     }
     .project-hero .project-label {
       display: inline-block;
@@ -197,10 +200,68 @@
       .content-box { padding: 20px 20px; }
       .project-topbar { padding: 10px 16px; }
     }
+
+    /* Sidebar nav */
+    .project-sidenav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid #ddd;
+      padding-top: 0;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .project-sidenav a {
+      box-sizing: content-box;
+      color: var(--blue-500);
+      display: block;
+      line-height: 100%;
+      padding: 10px 0 12px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+    .project-sidenav a:hover,
+    .project-sidenav a.active {
+      background-color: var(--grey-050);
+      border-left: 3px solid var(--blue-500);
+    }
+    .project-sidenav .sidenav-header {
+      display: block;
+      padding: 30px 30px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-page {
+      padding-left: 190px;
+    }
+    .project-topbar {
+      left: 190px;
+      width: calc(100% - 190px);
+    }
   </style>
 </head>
 
 <body>
+  <!-- Project sidebar nav -->
+  <div class="project-sidenav hide-on-med-and-down">
+    <span class="sidenav-header">Projects</span>
+    <a href="/projects/projects_epro.html">Affective Prosody</a>
+    <a href="/projects/projects_cms.html">Cerebellar Mutism</a>
+    <a href="/projects/projects_visual_vestibular.html">Self-Motion Perception</a>
+    <a href="/projects/projects_stroke_prediction.html">Stroke Prediction</a>
+    <a href="/projects/projects_tda.html">TDA Mapper</a>
+    <a href="/projects/projects_social_inappropriateness.html">Theory of Mind</a>
+    <a href="/projects/projects_time_orientation.html">Time Orientation</a>
+    <a href="/projects/projects_visuospatial.html">Visuospatial Dysfunction</a>
+  </div>
 
   <!-- Top navigation bar -->
   <div class="project-topbar">
@@ -229,36 +290,23 @@
       <div class="content-box">
         <h2>Aims</h2>
         <p>
-          Brain lesion patients exhibit highly variable and complex patterns of behavioral impairment.
-          Data-driven prediction of outcomes and lesion location from behavior is hindered by the curse
-          of dimensionality — standard approaches like PCA and clustering may miss the nonlinear structure
-          that organizes patients in high-dimensional behavior space. Topological Data Analysis (TDA),
-          and the Mapper algorithm in particular, offers a framework for visualizing and characterizing
-          this structure without assuming linearity or requiring strong distributional assumptions.
+          Analyses for this project remain in progress. Broadly, this project seeks to evaluate the utility of topological data analysis (TDA) approaches for characterizing large brain lesion patient databases. Preliminary analyses suggest that TDA-Mapper applied to post-lesion behavioral data reveals patient relatedness structure that is neuroanatomically grounded and outcome predictive. 
         </p>
-        <ul>
+        <!-- <ul>
           <li>Visualize the shape of the distribution of behavioral deficits in brain lesion patients using TDA Mapper</li>
           <li>Characterize the neuroanatomical correlates of patient groupings identified by the Mapper graph</li>
           <li>Predict 3-month functional outcomes from the acute behavioral topology using leave-one-out ridge regression</li>
           <li>Develop and release an open-source Python toolbox implementing TDA Mapper for clinical neuroscience data</li>
-        </ul>
+        </ul> -->
       </div>
 
       <!-- Description / Methods -->
       <div class="content-box">
-        <h2>Description &amp; Methods</h2>
+        <h2>Description</h2>
         <p>
-          Two cohorts were analyzed: a unilateral stroke cohort from Washington University (n = 85) with
-          acute behavioral data, and the Iowa Neurological Patient Registry lesion cohort (n = 255) with
-          chronic behavioral data. The TDA Mapper algorithm was applied to each cohort's behavioral
-          profiles by first reducing dimensionality with UMAP, clustering within overlapping cover elements,
-          and constructing a graph where nodes represent patient groupings and edges reflect shared patients
-          across nodes. Lesion mapping using a proportional subtraction approach identified brain lesion
-          locations associated with each node. The acute WashU Mapper graph was used to predict 3-month
-          functional outcomes via leave-one-out ridge regression, and predictions were benchmarked against
-          high-dimensional, PCA, and UMAP approaches.
+          Project in progress.
         </p>
-        <p>
+        <!-- <p>
           The Mapper graph revealed highly structured distributions of patients in high-dimensional behavior
           space, with nodes corresponding to interpretable clinical profiles — including patients with left
           motor deficits, right motor deficits, hemispatial neglect, worst walking, best recovery, and
@@ -266,7 +314,7 @@
           chronic outcomes including Return to Normal Living Index, social function, depression, pain, and
           functional independence. Many behavioral profiles correlated with lesion location, though some
           were more strongly associated with demographic attributes.
-        </p>
+        </p> -->
 
         <h2 style="margin-top: 28px;">Tools &amp; Methods</h2>
         <ul class="tools-list">
