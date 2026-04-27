@@ -169,6 +169,9 @@ ul.table-of-contents li.logo a:hover {
   min-height: 90px;
   padding: 30px 30px 40px;
 } */
+ul.side-nav.fixed {
+  overflow-y: auto;
+}
 ul.side-nav.fixed li.logo {
   background-color: var(--white);
   border-bottom: 1px solid #ddd;
@@ -381,6 +384,12 @@ h3 {
 #projects .card p {
   color: var(--grey-700);
 }
+#projects .card.medium .card-content {
+  height: auto;
+  padding: 10px 16px;
+}
+
+
 
 /* Projects: card-reveal */
 #projects .card-reveal,
@@ -424,6 +433,7 @@ h3 {
 .card.medium .card-image {
   height: 240px;
 }
+
 
 .card-action a.btn-floating {
   margin-bottom: 0;
@@ -564,6 +574,9 @@ a.hoverline:hover {
 .github:hover {
   background-color: black;
 }
+#projects .card .activator {
+  cursor: pointer;
+}
 
 /* Buttons - Read Me */
 .readme {
@@ -645,7 +658,7 @@ a.hoverline:hover {
   }
   nav a.button-collapse,
   nav a.button-collapse i {
-    color: #009688;
+    color: var(--blue-500);
     height: 56px;
     line-height: 56px;
   }
@@ -737,3 +750,5 @@ a.hoverline:hover {
     background-position-x: 30%;
   }
 }
+
+
